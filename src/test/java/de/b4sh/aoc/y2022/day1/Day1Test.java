@@ -11,20 +11,16 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class Day1Test {
-
-    private FileReader fileReader;
     private Day1 day1;
 
     @org.junit.jupiter.api.BeforeEach
     void setUp() throws FileNotFoundException {
-        fileReader = new FileReader();
         day1 = new Day1();
         day1.parseElfs(new File("src/test/resources/de/b4sh/aoc/y2022/day1/input.txt"));
     }
 
     @org.junit.jupiter.api.AfterEach
     void tearDown() {
-        fileReader = null;
         day1 = null;
     }
 
