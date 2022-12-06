@@ -64,8 +64,6 @@ public class Day5 {
             Stack tmpStack = new Stack();
             for(int i = 0; i < amount; i++){
                 tmpStack.add(stacks.get(from).poll());
-
-
             }
             while(!tmpStack.empty()){
                 stacks.get(to).push(tmpStack.pop());
