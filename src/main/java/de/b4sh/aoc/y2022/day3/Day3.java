@@ -35,8 +35,7 @@ public class Day3 {
                 continue;
             }
             //check for doubles
-            List<String> doubles = Arrays.stream(rucksacks.get(0).split("")).filter(elem -> rucksacks.get(1).contains(elem) && rucksacks.get(2).contains(elem)).distinct().toList();
-            doubles.forEach(e -> weight.addAndGet(pos.indexOf(e)+1));
+            Arrays.stream(rucksacks.get(0).split("")).filter(elem -> rucksacks.get(1).contains(elem) && rucksacks.get(2).contains(elem)).distinct().toList().forEach(e -> weight.addAndGet(pos.indexOf(e)+1));
             //clear
             rucksacks.clear();
             count = 0;
