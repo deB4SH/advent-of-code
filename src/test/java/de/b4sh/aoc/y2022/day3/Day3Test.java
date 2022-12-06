@@ -25,4 +25,9 @@ class Day3Test {
     void solveStar1() throws FileNotFoundException {
         day.solveStar1(new File("src/test/resources/de/b4sh/aoc/y2022/day3/input.txt"));
     }
+
+    @Test
+    void solveStar2() throws FileNotFoundException {
+        day.solveStar2(new File("src/test/resources/de/b4sh/aoc/y2022/day3/input.txt"));
+    }
 }
