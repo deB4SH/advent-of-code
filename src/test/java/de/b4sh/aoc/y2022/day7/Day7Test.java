@@ -35,6 +35,7 @@ class Day7Test {
     }
 
     @Test
-    void solveStar2() {
+    void solveStar2() throws FileNotFoundException {
+        Assertions.assertEquals(8679207,day.solveStar2(new File("src/test/resources/de/b4sh/aoc/y2022/day7/input.txt")));
     }
 }

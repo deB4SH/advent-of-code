@@ -16,13 +16,24 @@ public class Day7 {
     }
 
     public int solveStar2(final File file) throws FileNotFoundException {
-        Scanner scanner = new Scanner(file);
-        while (scanner.hasNextLine()) {
-            String line = scanner.nextLine();
+        final Node<DataDescriptor> parentNode = new Node<>(); //also root node
+        readFile(new Scanner(file),parentNode);
 
+        int diskSize = 70000000;
+        int requirement = 30000000;
+        int freeStorage = diskSize - parentNode.getFileSizeOfFiles();
+        int spaceToCleanUp = requirement - freeStorage;
+        List<Node<DataDescriptor>> directoryChilden = parentNode.getAllDirectoryChilden();
+        int nearestVal = Integer.MAX_VALUE;
+        Node<DataDescriptor> currentCandidate = null;
+        for (int i = 0; i < directoryChilden.size(); i++){
+            int dirSize = directoryChilden.get(i).getFileSizeOfFiles();
+            if(dirSize >= spaceToCleanUp && dirSize < nearestVal){
+                nearestVal = dirSize;
+                currentCandidate = directoryChilden.get(i);
+            }
         }
-
-        return -1;
+        return currentCandidate.getFileSizeOfFiles();
     }
 
     private void readFile(Scanner scanner, Node<DataDescriptor> parentNode){
