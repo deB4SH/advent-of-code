@@ -21,6 +21,7 @@ public class Day2 {
             count += RockPaperScissorsRuleset.calculateRound(plays[0],plays[1]);
         }
         System.out.println(count);
+        
     }
 
     public void solveStar2(final File file) throws FileNotFoundException {
